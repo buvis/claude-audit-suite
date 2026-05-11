@@ -1,0 +1,8 @@
+{
+  "name": "audit-suite",
+  "version": "0.1.0",
+  "description": "Health-check and audit skills for Claude Code: security, permissions, hooks, settings, MCP, plugins, memory, sessions, and more, plus a single orchestrator that runs them all and produces a remediation plan",
+  "author": {
+    "name": "buvis"
+  }
+}

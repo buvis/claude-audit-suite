@@ -1,0 +1,19 @@
+{
+  "name": "claude-audit-suite",
+  "description": "Health-check and audit skills for Claude Code",
+  "owner": {
+    "name": "buvis"
+  },
+  "plugins": [
+    {
+      "name": "audit-suite",
+      "description": "13 audit skills + orchestrator that produces a prioritized remediation plan for your Claude Code setup",
+      "version": "0.1.0",
+      "author": {
+        "name": "buvis"
+      },
+      "source": "./",
+      "category": "diagnostics"
+    }
+  ]
+}
