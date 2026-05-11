@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-05-11
+
 ### Changed
 
 - Helper-script paths in `audit-security`, `audit-sessions`, and `audit-skills` now use `${CLAUDE_SKILL_DIR}` (the env var Claude Code exports into the Bash tool for plugin skills) instead of hardcoded `~/.claude/skills/...` paths. Required so the scripts resolve when running from the plugin install rather than the personal skills directory.
