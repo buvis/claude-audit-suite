@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Release a new version of audit-suite.
+# Release a new version of claude-checkup.
 #
 # Usage: dev/bin/release [patch|minor|major]   (default: patch)
 #
@@ -115,11 +115,11 @@ git -C "$REPO_ROOT" push origin "v$VERSION"
 
 step "bumping central marketplace to v$VERSION"
 jq --arg v "$VERSION" '
-  .plugins = (.plugins | map(if .name == "audit-suite" then .version = $v else . end))
+  .plugins = (.plugins | map(if .name == "claude-checkup" then .version = $v else . end))
 ' "$MARKETPLACE" > "$MARKETPLACE.tmp"
 mv "$MARKETPLACE.tmp" "$MARKETPLACE"
 git -C "$MARKETPLACE_ROOT" add .claude-plugin/marketplace.json
-git -C "$MARKETPLACE_ROOT" commit -m "chore: bump audit-suite to v$VERSION"
+git -C "$MARKETPLACE_ROOT" commit -m "chore: bump claude-checkup to v$VERSION"
 
 step "pushing marketplace"
 git -C "$MARKETPLACE_ROOT" push origin master
@@ -128,4 +128,4 @@ CURRENT_STEP=""
 echo ""
 echo "[release] ✓ released v$VERSION"
 echo "[release] ✓ marketplace bumped to v$VERSION"
-echo "[release] users can now run: /plugin update audit-suite@buvis-plugins"
+echo "[release] users can now run: /plugin update claude-checkup@buvis-plugins"

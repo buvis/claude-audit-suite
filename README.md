@@ -1,6 +1,6 @@
-# Claude Audit Suite
+# Claude Checkup
 
-[![GitHub license](https://img.shields.io/github/license/buvis/claude-audit-suite)](https://github.com/buvis/claude-audit-suite/blob/master/LICENSE)
+[![GitHub license](https://img.shields.io/github/license/buvis/claude-checkup)](https://github.com/buvis/claude-checkup/blob/master/LICENSE)
 
 A health-check toolkit for [Claude Code](https://claude.ai/code). Thirteen focused audit skills plus a single orchestrator that runs them all, prints a dashboard, and produces a prioritized remediation plan.
 
@@ -28,7 +28,7 @@ Two commands inside Claude Code:
 
 ```
 /plugin marketplace add buvis/claude-plugins
-/plugin install audit-suite@buvis-plugins
+/plugin install claude-checkup@buvis-plugins
 ```
 
 Restart Claude Code, then run `/audit-claude-config` to get a full health report.
@@ -36,14 +36,14 @@ Restart Claude Code, then run `/audit-claude-config` to get a full health report
 ### Update
 
 ```
-/plugin update audit-suite@buvis-plugins
+/plugin update claude-checkup@buvis-plugins
 ```
 
 ### Alternative: install directly from this repo
 
 ```
-/plugin marketplace add buvis/claude-audit-suite
-/plugin install audit-suite@claude-audit-suite
+/plugin marketplace add buvis/claude-checkup
+/plugin install claude-checkup@claude-checkup
 ```
 
 ## Usage

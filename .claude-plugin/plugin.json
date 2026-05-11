@@ -1,5 +1,5 @@
 {
-  "name": "audit-suite",
+  "name": "claude-checkup",
   "version": "0.1.1",
   "description": "Health-check and audit skills for Claude Code: security, permissions, hooks, settings, MCP, plugins, memory, sessions, and more, plus a single orchestrator that runs them all and produces a remediation plan",
   "author": {
