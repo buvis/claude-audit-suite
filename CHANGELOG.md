@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2026-05-17
+
 ### Fixed
 
 - **audit-sessions**: the `Bash(grep)` rule-violation check no longer flags `rg`. `rg` is permitted by the aegis tools policy, so flagging it produced ~1800 false-positive violations per audit.
