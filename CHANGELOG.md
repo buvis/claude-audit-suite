@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **audit-sessions**: the `Bash(grep)` rule-violation check no longer flags `rg`. `rg` is permitted by the aegis tools policy, so flagging it produced ~1800 false-positive violations per audit.
+
 ### Changed
 
 - **claude-checkup**: renamed plugin from `audit-suite` to `claude-checkup`. Install command is now `/plugin install claude-checkup@buvis-plugins`; the old `audit-suite` name no longer resolves. Skill names (`audit-security`, `audit-skills`, ...) and the orchestrator command (`/audit-claude-config`) are unchanged.

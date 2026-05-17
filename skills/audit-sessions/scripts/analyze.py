@@ -57,7 +57,8 @@ __all__ = [
 # Heuristic constants
 # -----------------------------------------------------------------------------
 
-_BASH_GREP_RE = re.compile(r"^(grep|rg|ag)\b")
+# `rg` is allowed (faster than grep, respects .gitignore) per aegis tools policy.
+_BASH_GREP_RE = re.compile(r"^(grep|ag)\b")
 _BASH_GIT_GREP_RE = re.compile(r"^git\s+(grep|log)\b")
 _BASH_CAT_RE = re.compile(r"^(cat|head|tail|less|more)\s+\S")
 _BASH_HEREDOC_RE = re.compile(r"<<\s*['\"]?[A-Za-z]+")
@@ -178,7 +179,7 @@ def _percentile(values: list[int], p: float) -> float:
 def detect_rule_violations(sessions: Iterable[SessionData]) -> list[dict]:
     """Find Bash usages that should have used dedicated tools."""
     rules = (
-        ("bash_grep", "Use Grep tool instead of Bash(grep/rg/ag)", _check_grep),
+        ("bash_grep", "Use Grep tool instead of Bash(grep/ag)", _check_grep),
         ("bash_cat", "Use Read tool instead of Bash(cat/head/tail/less/more)", _check_cat),
         ("bash_find", "Use Glob tool instead of Bash(find)", _check_find),
         ("bash_echo_redirect", "Use Write tool instead of Bash(echo/printf > file)", _check_echo),

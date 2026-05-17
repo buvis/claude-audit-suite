@@ -228,7 +228,9 @@ def test_normalize_prompt_strips_paths_and_stopwords() -> None:
 
 def test_rule_violation_bash_grep() -> None:
     assert analyze._check_grep("grep -r foo .")
-    assert analyze._check_grep("rg foo")
+    assert analyze._check_grep("ag foo")
+    # rg is allowed (faster than grep, respects .gitignore) per aegis tools policy
+    assert not analyze._check_grep("rg foo")
     assert not analyze._check_grep("git grep foo")
     assert not analyze._check_grep("git log --grep=foo")
     # filtering CLI output through grep is fine, not a Grep-tool replacement
